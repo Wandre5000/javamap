@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title></title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.21.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.21.0/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        body { margin:0; padding:0; }
+        #map { position:absolute; top:0; bottom:0; width:100%; }
+    </style>
+</head>
+<body>
+
+<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-compare/v0.0.1/mapbox-gl-compare.js'></script>
+<link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-compare/v0.0.1/mapbox-gl-compare.css' type='text/css' />
+<style>
+body {
+    overflow: hidden;
+}
+
+body * {
+   -webkit-touch-callout: none;
+     -webkit-user-select: none;
+        -moz-user-select: none;
+         -ms-user-select: none;
+             user-select: none;
+}
+
+.map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+</style>
+
+<div id='before' class='map'></div>
+<div id='after' class='map'></div>
+
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoiYWQ1MDAwIiwiYSI6ImNpcnB0a2ZhdDBoNXZmOW02MTFnbWJocW4ifQ.lR5dRr20HU5i47l_ljBSKA';
+var beforeMap = new mapboxgl.Map({
+    container: 'before',
+    style: 'mapbox://styles/ad5000/cirpxqwuy002lg9ngletbk39o',
+    center: [0, 0],
+    zoom: 0
+});
+
+var afterMap = new mapboxgl.Map({
+    container: 'after',
+    style: 'mapbox://styles/ad5000/cirpx0az5002kg9ngcpy71clp',
+    center: [0, 0],
+    zoom: 0
+});
+
+var map = new mapboxgl.Compare(beforeMap, afterMap);
+</script>
+
+</body>
+</html>
